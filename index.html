@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-/* General Styles */
+        /* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -13,9 +15,10 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f7fa;
     color: #333;
+    line-height: 1.6;
 }
 
 .container {
@@ -25,112 +28,175 @@ body {
 
 /* Header and Navigation */
 header {
-    background-color: #4CAF50;
+    background-color: #1e2a38;
     color: white;
-    padding: 1rem 0;
-    margin-bottom: 20px;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
+header .logo h1 {
+    font-size: 24px;
     text-align: center;
-    margin-bottom: 10px;
+}
+
+header .logo h1 span {
+    color: #00d1b2;
 }
 
 nav ul {
     list-style-type: none;
     text-align: center;
+    margin-top: 10px;
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
     margin: 0 15px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    background-color: #00d1b2;
 }
 
 /* Main Content */
 main {
-    padding: 20px 0;
+    padding: 40px 0;
 }
 
-section.dashboard {
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-employee-btn {
+    padding: 10px 20px;
+    background-color: #00d1b2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.add-employee-btn i {
+    margin-right: 8px;
+}
+
+.add-employee-btn:hover {
+    background-color: #00a488;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 30px;
 }
 
-section.dashboard .stats {
-    display: flex;
-    justify-content: space-between;
-}
-
 .stat-box {
-    background-color: #fff;
+    background-color: white;
     padding: 20px;
     width: 30%;
     text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.stat-box i {
+    font-size: 40px;
+    color: #00d1b2;
+    margin-bottom: 10px;
 }
 
 .stat-box h3 {
-    font-size: 1.2em;
+    font-size: 16px;
     margin-bottom: 10px;
 }
 
 .stat-box p {
-    font-size: 2em;
-    font-weight: bold;
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
 }
 
-/* Employee List */
-section.employee-list table {
+/* Employee List Section */
+table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-section.employee-list th, 
-section.employee-list td {
+table th, table td {
     padding: 15px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
-section.employee-list th {
+table th {
     background-color: #f4f4f4;
     font-weight: bold;
 }
 
-section.employee-list td button {
-    padding: 8px 12px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
+.status {
+    padding: 5px 10px;
     border-radius: 5px;
-    cursor: pointer;
+    color: white;
+    font-weight: bold;
 }
 
-section.employee-list td button:hover {
-    background-color: #45a049;
+.status.active {
+    background-color: #00d1b2;
+}
+
+.status.inactive {
+    background-color: #ff3860;
+}
+
+.edit-btn, .delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #00d1b2;
+    margin-right: 10px;
+}
+
+.edit-btn:hover {
+    color: #00a488;
+}
+
+.delete-btn:hover {
+    color: #ff3860;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 10px 0;
-    background-color: #333;
+    padding: 15px 0;
+    background-color: #1e2a38;
     color: white;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 footer p {
@@ -144,7 +210,9 @@ footer p {
     <!-- Navigation Bar -->
     <header>
         <div class="container">
-            <h1>Employee Management System</h1>
+            <div class="logo">
+                <h1>Employee<span>Manager</span></h1>
+            </div>
             <nav>
                 <ul>
                     <li><a href="#">Dashboard</a></li>
@@ -160,26 +228,34 @@ footer p {
     <!-- Main Content -->
     <main>
         <div class="container">
+            <!-- Dashboard Section -->
             <section class="dashboard">
                 <h2>Dashboard</h2>
                 <div class="stats">
                     <div class="stat-box">
+                        <i class="fas fa-users"></i>
                         <h3>Total Employees</h3>
                         <p>100</p>
                     </div>
                     <div class="stat-box">
+                        <i class="fas fa-building"></i>
                         <h3>Departments</h3>
                         <p>5</p>
                     </div>
                     <div class="stat-box">
+                        <i class="fas fa-user-plus"></i>
                         <h3>New Hires</h3>
                         <p>10</p>
                     </div>
                 </div>
             </section>
 
+            <!-- Employee List Section -->
             <section class="employee-list">
-                <h2>Employee List</h2>
+                <div class="section-header">
+                    <h2>Employee List</h2>
+                    <button class="add-employee-btn"><i class="fas fa-plus"></i> Add Employee</button>
+                </div>
                 <table>
                     <thead>
                         <tr>
@@ -187,6 +263,7 @@ footer p {
                             <th>Name</th>
                             <th>Position</th>
                             <th>Department</th>
+                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -196,15 +273,18 @@ footer p {
                             <td>John Doe</td>
                             <td>Manager</td>
                             <td>Marketing</td>
-                            <td><button>Edit</button> <button>Delete</button></td>
+                            <td><span class="status active">Active</span></td>
+                            <td><button class="edit-btn"><i class="fas fa-edit"></i></button> <button class="delete-btn"><i class="fas fa-trash-alt"></i></button></td>
                         </tr>
                         <tr>
                             <td>002</td>
                             <td>Jane Smith</td>
                             <td>Developer</td>
                             <td>IT</td>
-                            <td><button>Edit</button> <button>Delete</button></td>
+                            <td><span class="status inactive">Inactive</span></td>
+                            <td><button class="edit-btn"><i class="fas fa-edit"></i></button> <button class="delete-btn"><i class="fas fa-trash-alt"></i></button></td>
                         </tr>
+                        <!-- Add more rows as needed -->
                     </tbody>
                 </table>
             </section>
