@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <style>
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 0;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    padding: 20px 0;
+}
+
+section.dashboard {
+    margin-bottom: 30px;
+}
+
+section.dashboard .stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat-box {
+    background-color: #fff;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Employee List */
+section.employee-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section.employee-list th, 
+section.employee-list td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+section.employee-list th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+section.employee-list td button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+section.employee-list td button:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="container">
+            <h1>Employee Management System</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Employees</a></li>
+                    <li><a href="#">Add Employee</a></li>
+                    <li><a href="#">Reports</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <section class="dashboard">
+                <h2>Dashboard</h2>
+                <div class="stats">
+                    <div class="stat-box">
+                        <h3>Total Employees</h3>
+                        <p>100</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Departments</h3>
+                        <p>5</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>New Hires</h3>
+                        <p>10</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="employee-list">
+                <h2>Employee List</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Employee ID</th>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Department</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>John Doe</td>
+                            <td>Manager</td>
+                            <td>Marketing</td>
+                            <td><button>Edit</button> <button>Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>Jane Smith</td>
+                            <td>Developer</td>
+                            <td>IT</td>
+                            <td><button>Edit</button> <button>Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Employee Management System. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
